@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block main_content %}
+<h2>Create a movie collection</h2>
+<h3>Save movies to collections such as "personal favorites", "ones to watch", or "movie night classics" - it's up to you!</h3>
+<form action="" method="POST">
+	{{ form.name.label }} {{ form.name() }}
+	{{ form.movie_picks.label }} {{ form.movie_picks() }}
+	{{ form.submit.label }}{{ form.submit() }}
+	{{ form.hidden_tag() }}
+
+	{% if get_flashed_messages() %}
+
+	{% for message in get_flashed_messages() %}
+	{{ message }}
+	{% endfor %}
+	{% endif %}
+</form>
+
+
+
+{% endblock %}

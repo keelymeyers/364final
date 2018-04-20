@@ -1,0 +1,41 @@
+<h1>Movie App</h1>
+{% if current_user.is_authenticated %}
+    <a href="{{ url_for('logout') }}">Sign Out {{current_user.username}}</a>
+{% else %}
+    <a href="{{ url_for('login') }}">Sign In</a>
+{% endif %}
+<br>
+<br>
+
+
+{% block nav %}
+    <a href="{{ url_for('index') }}">Home</a><br>
+    <a href="{{ url_for('see_all') }}">See all movies</a><br>
+    <a href="{{ url_for('see_all_actors') }}">See all actors</a><br>
+    <a href="{{ url_for('create_collection') }}">Create a personal movie collection</a><br>
+    <a href="{{ url_for('collections') }}">All movie collections</a><br>
+
+<p>--------</p><br>
+{% endblock %}
+
+{% block main_content %}
+
+<form method="POST">
+	{{ form.hidden_tag() }}
+	{{ form.title.label }} {{ form.title() }}
+	{{ form.submit() }}
+</form>
+
+<div>
+{% for message in get_flashed_messages() %}
+{{ message }}
+{% endfor %}
+</div>
+
+{% if name %}
+	<p>Added {{ name }} to searched movies!</p>
+{% endif %}
+
+{% endblock %}
+
+

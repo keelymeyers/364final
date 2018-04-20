@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block main_content %}
+<h2>{{ collection.name }}</h2>
+
+		
+
+{% for mv in movies %}
+      <li>Movie title: {{ mv.title }}, Release date: {{ mv.release_date }}, Starring: {{ mv.cast }}</li><br><br>
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block main_content %}
+<h2>My Movie Collections</h2>
+
+{% if not collections %}
+There are no collections to show. Start saving!
+
+{% else %}
+
+<ul>
+{% for c in collections %}
+    <li><a href="http://localhost:5000/collection/{{ c.id }}">{{ c.name }}</a></li>
+    <form name="delete" method="POST" action="/delete/{{ c.name }}">
+  			{{ delete.hidden_tag() }}
+  			{{ delete.submit() }}
+  	</form>
+  	<form name="update" method="POST" action="/update/{{ c.name }}">
+  			{{ update.hidden_tag() }}
+  			{{ update.submit() }}
+  	</form>
+
+{% endfor %}
+</ul>
+
+{% endif %}
+
+<div>
+{% for message in get_flashed_messages() %}
+<strong>*** {{ message }} ***</strong>
+{% endfor %}
+</div>
+
+{% endblock %}

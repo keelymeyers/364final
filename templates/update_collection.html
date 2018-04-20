@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block main_content %}
+<h2>Update Collection</h2>
+
+
+<form action="/update/{{ collection }}" method="POST">
+	{{ form.hidden_tag() }}
+	{{ form.newName.label }} {{ form.newName() }}
+	{{ form.submit.label }}{{ form.submit() }}
+</form>
+
+<div>
+{% for message in get_flashed_messages() %}
+{{ message }}
+{% endfor %}
+</div>
+
+{% endblock %}
+
+
+
+

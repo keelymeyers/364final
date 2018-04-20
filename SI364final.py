@@ -290,12 +290,6 @@ def register():
     return render_template('register.html',form=form)
 
 
-@app.route('/secret')  
-@login_required
-def secret():
-    return "Only authenticated users have access to this feature! Please try to log in or contact the site admin."
-
-
 @app.route('/', methods=['GET', 'POST'])   
 def index():
 	form = MovieSearchForm()

@@ -13,7 +13,9 @@ This application allows users to register/log in to an account and search for mo
 
 * There must be a file named `moviedb_access.py` in the same directory as `SI364final.py`, with the API key filled in. I have included an API key in the Canvas submission comments for use by the instructors of SI364. For others to run the app, an API key can be generated at https://www.themoviedb.org/documentation/api.
 
+
 ## To Run & Use This Application
+
 
 * Download and `cd` to the directory where the app files are located.
 * In the terminal, run, `python SI364final.py runserver`
@@ -22,14 +24,25 @@ This application allows users to register/log in to an account and search for mo
 * Once logged in, there will be a form to search movie titles. Enter a movie title to search the API.
     * For example, search "Black Panther" in the search box.
     * You should see a message alerting you that the movie has been added to searched movies, or a message saying that the movie could not be found
-* Once a movie has been searched for, you can click "See all movies" to see a list of all searched movies, or "See all actors" to see all the actors who star in movies you have searched for
-* You can then click "Create a personal movie collection", where you will be prompted to choose a name for a movie collection, such as "Movies to Watch", and then select movies to add.
-* After creating a collection, you can click "See all collections", where a list will appear of all of your user-specific collections, alongside Update and Delete buttons. You can either click on the collection name to see movies in the collection, or click either the Delete or Update button. The Delete button will delete your collection, and the Update button will allow you to change the name of your collection. 
+    * If the API request returns a result, the movie title & release date will be saved to the Movie model, and the names of the top actors will be saved in the Actor model, with a many:many relationship between the two.
+* Once a movie has been searched for, you can click "See all movies" to see a list of all searched movies, or "See all actors" to see all the actors who star in movies you have searched for. Each view function will query their respective database.
+* You can then click "Create a personal movie collection", where you will be prompted to choose a name for a movie collection, such as "Movies to Watch", and then select movies to add. The collection will then be saved to the PersonalMovieCollection model.
+* After creating a collection, you can click "See all collections", where a list will appear of all of your user-specific collections, alongside Update and Delete buttons. You can either click on the collection name to see movies in the collection, or click either the Delete or Update button. The Delete button will delete your collection, and the Update button will allow you to change the name of your collection. Each feature will either update or delete data in the PersonalMovieCollection model.
+
 
 ## Routes in this Application
 
- 
-
+* `/login` -> `login.html`
+* `/logout` -> Logs out current user and redirects to the homepage ('/') (login restricted)
+* `/register` -> `register.html` 
+* `/` -> `base.html`
+* `/actors` -> `all_actors.html` (login restricted)
+* `/movies` -> `all_movies.html` (login restricted)
+* `/create_movie_collection` -> `create_collection.html` (login restricted)
+* `/collections` -> `collections.html` (login restricted)
+* `/collection/<id_num>` -> `collection.html` (login restricted)
+* `/delete/<collection>` -> Deletes a collection and redirects to collections page (login restricted)
+* `/update/<collection>` -> `update_collection.html` (login restricted)
 
 
 ## Code Requirements
@@ -49,7 +62,7 @@ Note that many of these requirements of things your application must DO or must 
 
  - [x] **At least 3 model classes besides the User class.**
 
- - [x] **At least one one:many relationship that works properly built between 2 models.**
+ - [ ] At least one one:many relationship that works properly built between 2 models.
 
  - [x] **At least one many:many relationship that works properly built between 2 models.**
 
@@ -101,5 +114,5 @@ Note: Maximum possible % is 102%.
  - [ ](100 points) Include a use of an AJAX request in your application that accesses and displays useful (for use of your application) data.
  - [ ](100 points) Create, run, and commit at least one migration.
  - [ ](100 points) Include file upload in your application and save/use the results of the file. (We did not explicitly learn this in class, but there is information available about it both online and in the Grinberg book.)
- - [x]**(100 points) Deploy the application to the internet (Heroku) — only counts if it is up when we grade / you can show proof it is up at a URL and tell us what the URL is in the README. (Heroku deployment as we taught you is 100% free so this will not cost anything.)**
+ - [ ](100 points) Deploy the application to the internet (Heroku) — only counts if it is up when we grade / you can show proof it is up at a URL and tell us what the URL is in the README. (Heroku deployment as we taught you is 100% free so this will not cost anything.)
  - [ ](100 points) Implement user sign-in with OAuth (from any other service), and include that you need a specific-service account in the README, in the same section as the list of modules that must be installed.

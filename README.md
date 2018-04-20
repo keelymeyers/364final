@@ -18,9 +18,9 @@ This application allows users to register/log in to an account and search for mo
 
 
 * Download and `cd` to the directory where the app files are located.
-* In the terminal, run, `python SI364final.py runserver`
+* In the terminal, run `python SI364final.py runserver`
 * At localhost:500, the homepage will display a search form for searching movies, as well as a link at the top to login to the application. All other links are to routes only avaliable to registered/logged in users
-* Log in, after registering if necessary
+* Log in (after registering if necessary)
 * Once logged in, there will be a form to search movie titles. Enter a movie title to search the API.
     * For example, search "Black Panther" in the search box.
     * You should see a message alerting you that the movie has been added to searched movies, or a message saying that the movie could not be found
@@ -62,7 +62,7 @@ Note that many of these requirements of things your application must DO or must 
 
  - [x] **At least 3 model classes besides the User class.**
 
- - [ ] At least one one:many relationship that works properly built between 2 models.
+- [ ] At least one one:many relationship that works properly built between 2 models.
 
  - [x] **At least one many:many relationship that works properly built between 2 models.**
 
@@ -84,13 +84,13 @@ Note that many of these requirements of things your application must DO or must 
 
  - [x] **Include at least 4 template .html files in addition to the error handling template files.**
 
- - [x] **At least one Jinja template for loop and at least two Jinja template conditionals should occur amongst the templates.
+ - [x] **At least one Jinja template for loop and at least two Jinja template conditionals should occur amongst the templates.**
  
  - [x]**At least one request to a REST API that is based on data submitted in a WTForm OR data accessed in another way online (e.g. scraping with BeautifulSoup that does accord with other involved sites' Terms of Service, etc).**
 
  - [x] **Your application should use data from a REST API or other source such that the application processes the data in some way and saves some information that came from the source to the database (in some way).**
  
- - [ ]At least one WTForm that sends data with a GET request to a new page.
+- [ ] At least one WTForm that sends data with a GET request to a new page.
 
  - [x] **At least one WTForm that sends data with a POST request to the same page. (NOT counting the login or registration forms provided for you in class.)**
 
@@ -111,8 +111,8 @@ Note that many of these requirements of things your application must DO or must 
 Additional Requirements for additional points -- an app with extra functionality!
 Note: Maximum possible % is 102%.
 
- - [ ](100 points) Include a use of an AJAX request in your application that accesses and displays useful (for use of your application) data.
- - [ ](100 points) Create, run, and commit at least one migration.
- - [ ](100 points) Include file upload in your application and save/use the results of the file. (We did not explicitly learn this in class, but there is information available about it both online and in the Grinberg book.)
- - [ ](100 points) Deploy the application to the internet (Heroku) — only counts if it is up when we grade / you can show proof it is up at a URL and tell us what the URL is in the README. (Heroku deployment as we taught you is 100% free so this will not cost anything.)
- - [ ](100 points) Implement user sign-in with OAuth (from any other service), and include that you need a specific-service account in the README, in the same section as the list of modules that must be installed.
+- [ ](100 points) Include a use of an AJAX request in your application that accesses and displays useful (for use of your application) data.
+- [ ](100 points) Create, run, and commit at least one migration.
+- [ ](100 points) Include file upload in your application and save/use the results of the file. (We did not explicitly learn this in class, but there is information available about it both online and in the Grinberg book.)
+- [ ](100 points) Deploy the application to the internet (Heroku) — only counts if it is up when we grade / you can show proof it is up at a URL and tell us what the URL is in the README. (Heroku deployment as we taught you is 100% free so this will not cost anything.)
+- [ ](100 points) Implement user sign-in with OAuth (from any other service), and include that you need a specific-service account in the README, in the same section as the list of modules that must be installed.
